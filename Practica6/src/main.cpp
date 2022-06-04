@@ -39,7 +39,7 @@ else
         Serial.println("archivo.txt doesn't exist");
 }
   myFile = SD.open("/archivo.txt", FILE_WRITE);//abrimos  el archivo 
-  myFile.println("algo");
+  myFile.println("Hola mundo");
   myFile.close();
   myFile=SD.open("/archivo.txt");
   if (myFile) {
