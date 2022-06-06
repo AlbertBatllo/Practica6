@@ -82,3 +82,12 @@ Un cop establerta la conexió, carreguem el fitxer de text "pf32.txt" al objecte
   }
 }
 ```
+
+**Loop:**
+```
+void loop()
+{
+  
+}
+
+
