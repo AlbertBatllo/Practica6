@@ -13,17 +13,17 @@ File myFile;
 
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.print("Iniciando SD ...");
-  if (!SD.begin(4)) {
+  if (!SD.begin(5)) {
     Serial.println("No se pudo inicializar");
     return;
   }
   Serial.println("inicializacion exitosa");
  
-  myFile = SD.open("arc32.txt");//abrimos  el archivo 
+  myFile = SD.open("/archivo.txt");//abrimos  el archivo 
   if (myFile) {
-    Serial.println("arc32.txt:");
+    Serial.println("archivo.txt:");
     while (myFile.available()) {
     	Serial.write(myFile.read());
     }
@@ -59,20 +59,20 @@ Primer s'inicialitzarà la SD, mentres es mostrarà per pantalla "Iniciando SD .
 ```
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.print("Iniciando SD ...");
-  if (!SD.begin(4)) {
+  if (!SD.begin(5)) {
     Serial.println("No se pudo inicializar");
     return;
   }
   Serial.println("inicializacion exitosa");
 ```
-Un cop establerta la conexió, carreguem el fitxer de text "pf32.txt" al objecte "myFile" creat anteriorment. A continuació s'executarà una funció if que revisarà si s'ha pogut carregar el fitxer correctament. En cas afirmatiu es mostrarà el contingut a traves de la terminal i, un cop acabat, tancarà el fitxer. En càs negatiu es mostrarà per pantalla "Error al abrir el archivo":
+Un cop establerta la conexió, carreguem el fitxer de text "parchivo.txt" al objecte "myFile" creat anteriorment. A continuació s'executarà una funció if que revisarà si s'ha pogut carregar el fitxer correctament. En cas afirmatiu es mostrarà el contingut a traves de la terminal i, un cop acabat, tancarà el fitxer. En càs negatiu es mostrarà per pantalla "Error al abrir el archivo":
 
  ```
-  myFile = SD.open("pf32.txt");//abrimos  el archivo 
+  myFile = SD.open("/archivo.txt");//abrimos  el archivo 
   if (myFile) {
-    Serial.println("pf32.txt:");
+    Serial.println("archivo.txt:");
     while (myFile.available()) {
     	Serial.write(myFile.read());
     }
