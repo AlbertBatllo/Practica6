@@ -6,17 +6,17 @@ File myFile;
 
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.print("Iniciando SD ...");
-  if (!SD.begin(4)) {
+  if (!SD.begin(5)) {
     Serial.println("No se pudo inicializar");
     return;
   }
   Serial.println("inicializacion exitosa");
  
-  myFile = SD.open("arc32.txt");//abrimos  el archivo 
+  myFile = SD.open("/archivo.txt");//abrimos  el archivo 
   if (myFile) {
-    Serial.println("arc32.txt:");
+    Serial.println("archivo.txt:");
     while (myFile.available()) {
     	Serial.write(myFile.read());
     }
